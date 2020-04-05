@@ -1,0 +1,50 @@
+﻿@model WebApp.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+
+
+
+        <center>
+            @Html.DisplayFor(model => model.Name) <text>-</text>
+
+
+
+            @Html.DisplayFor(model => model.Price) <text>EGP-</text>
+
+
+
+            <text>(</text>@Html.DisplayFor(model => model.Category.Name)<text>)</text>
+
+            <br />
+            <br />
+
+            <img src="~/UpLoads/@Html.DisplayFor(Model => Model.Image)"
+                 class="thumbnail" style="width:400px; height:400px;"  />
+
+            <br />
+            <br />
+
+
+
+            @Html.DisplayFor(model => model.Description)
+
+        </center>
+    </dl>
+    
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
