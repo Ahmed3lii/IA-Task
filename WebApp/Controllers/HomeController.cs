@@ -16,6 +16,17 @@ namespace WebApp.Controllers
             return View(list);
         }
 
+        public ActionResult Details(int ProductId)
+        {
+
+            var product = db.Products.Find(ProductId);
+            if(product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

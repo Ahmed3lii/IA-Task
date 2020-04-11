@@ -5,28 +5,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h1>Details</h1>
 
 <div>
-    <h4>Product</h4>
+    <h3 style="color:midnightblue">@Html.DisplayFor(model => model.Name) </h3>
     <hr />
-    <dl class="dl-horizontal">
+    
 
 
 
 
 
         <center>
-            @Html.DisplayFor(model => model.Name) <text>-</text>
+            <div class="panel panel-default" style="padding-bottom:15px;color:maroon ">
+                @Html.DisplayFor(model => model.Name) <text>-</text>
 
 
 
-            @Html.DisplayFor(model => model.Price) <text>EGP-</text>
+                @Html.DisplayFor(model => model.Price) <text>EGP-</text>
 
 
 
-            <text>(</text>@Html.DisplayFor(model => model.Category.Name)<text>)</text>
-
+                <text>(</text>@Html.DisplayFor(model => model.Category.Name)<text>)</text>
+            </div>
             <br />
             <br />
 
@@ -38,13 +39,22 @@
 
 
 
-            @Html.DisplayFor(model => model.Description)
+            <h4 style="color:darkred">@Html.DisplayFor(model => model.Description)</h4>   
 
         </center>
-    </dl>
-    
+
 </div>
+<br />
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <center>
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-success" }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-larg" })
+    </center>
+ 
+
+    
+
 </p>

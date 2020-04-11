@@ -5,27 +5,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>List Of Products</h2>
+    <div class="panel panel-default" style="padding-bottom:15px;color:maroon ">
+        <h1 style="color:darkred; text-align:center;">List Of Products</h1>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <button class="btn btn-primary" onclick="alert('You should To Go Home Page!')">Filter</button>
+            <p style="text-align:right;">
+                @Html.ActionLink("Add Product", "Create", null, new { @class = "btn btn-primary btn-success" })
+            </p>
+            <br />
+            <br />
+            <br />
+            @foreach (var item in Model)
+            {
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
-   
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <tr>
                 <div class="col-md-3 thumbnail">
                     <img src="~/UpLoads/@Html.DisplayFor(model => item.Image)"
                          class="thumbnail" style="width:200px; height:200px;" />
 
 
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-success" }) |
 
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    <center>
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-success" })
+                    </center>
                 </div>
-            </tr>
-        }
-    </div>
+
+            }
+        </div>
