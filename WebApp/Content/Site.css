@@ -46,5 +46,9 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-errors {
     color: #b94a48;
 }
-
+.logo-size
+{
+    width:120px;
+    height:62px;
+}
 

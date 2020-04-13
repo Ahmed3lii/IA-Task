@@ -57,7 +57,7 @@ namespace WebApp.Controllers
                 upload.SaveAs(path);
                 product.Image = upload.FileName;
                 db.Products.Add(product);
-                
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -91,11 +91,11 @@ namespace WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                    string path = Path.Combine(Server.MapPath("~/UpLoads"), upload.FileName);
-                    upload.SaveAs(path);
-                    product.Image = upload.FileName;
-                
-                
+                string path = Path.Combine(Server.MapPath("~/UpLoads"), upload.FileName);
+                upload.SaveAs(path);
+                product.Image = upload.FileName;
+
+
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

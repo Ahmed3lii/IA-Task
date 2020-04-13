@@ -13,7 +13,7 @@
 
     <div class="form-horizontal">
         <div class="alert alert-danger" id="error-div" style="display:none">
-            <span id="view-error">
+            <span id="view-err">
 
             </span>
         </div>
@@ -73,19 +73,20 @@
     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-larg" })
 </div>
 
-@section scripts{
 
-    @Scripts.Render("~/bundle/jquery")
-    @Scripts.Render("~/bundle/jqueryval")
-}
+
+<script src="~/Scripts/jquery.js"></script>
 <script>
+
     $(function () {
         $("#save").click(function () {
             if ($("#ProductImage").val() == "") {
                 $("#error-div").fadeIn();
-                $("#view-error").append("Please Upload A photo For This Product");
+                $("#view-err").append("Please Upload Product Image");
                 return false;
-            }
+        }
         });
-    }
+    });
+
 </script>
+
